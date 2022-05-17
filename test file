@@ -1,1 +1,5 @@
 //test
+
+const rightOrWrong = letter => {
+    
+}
