@@ -1,0 +1,28 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+
+let word = ['A', 'P', 'P', 'L', 'E'];
+
+let wrongLetters = []
+
+const updateWrongLetter = letter => {
+    if (word.includes(letter) === False) {
+        wrongLetters.push(letter);
+    }
+    return wrongLetters
+}
+
+
+class StrikeThrough extends Component {
+    render() {
+        return (
+            <div>
+                <Text style={{textDecorationLine: 'line-through', textDecorationStyle: 'solid'}}>
+                {wrongLetters}
+                </Text>
+            </div>
+        )
+    }
+}
+
