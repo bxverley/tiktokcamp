@@ -14,7 +14,7 @@ const updateWrongLetter = letter => {
 }
 
 
-class StrikeThrough extends Component {
+class StrikeThrough extends React.Component {
     render() {
         return (
             <div>
@@ -26,3 +26,7 @@ class StrikeThrough extends Component {
     }
 }
 
+ReactDOM.render(
+    <StrikeThrough />,
+    document.getElementById('WrongWord')
+)
