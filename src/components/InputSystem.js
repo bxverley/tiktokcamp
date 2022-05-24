@@ -2,13 +2,16 @@
 //Tasking No. 4
 import { KeyboardEvent } from "react"
 import React, { useState, useEffect, } from 'react';
+import { useSelector, useDispatch } from "react-redux";
 
 
-export default function InputSystem() {
+export default function InputSystem(props) {
     //put any custom functions here
 
-    const [letter, setLetter] = useState(null);
+    //temp
 
+    const [letter, setLetter] = useState(null);
+    
     const alphabet = "qwertyuiopasdfghjklzxcvbnm".split("");
 
     function getLetterPressed(e) {
@@ -23,15 +26,22 @@ export default function InputSystem() {
       }
     }
 
+    //redux stuff here
+    const hangman = useSelector(state => state.hangman);
+    const dispatch = useDispatch();
+
     
     useEffect(() => {
       // button animation + sound effect
       // other stuff
+      var answer = hangman.answer
+      console.log("answer prop received by InputSystem: " + answer)
     });
     
     
     return (
       <div tabIndex="0" onKeyDown={getLetterPressed}>
+          <h2>Answer: {hangman.answer} delete this when done.</h2>
           <h1>Input: {letter} </h1>
           <div>
             {alphabet.map((alphaLetter,index)=>{
