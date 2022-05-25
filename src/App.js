@@ -34,14 +34,15 @@ function App() {
   function passDownNewAnswer() {
     randomWord();
     console.log("Loaded random word: " + answer);
+    answer = answer.toLowerCase()
     dispatch(setAnswer(answer))
     answer = hangman.answer
   }
-  passDownNewAnswer();
+  // passDownNewAnswer();
 
-  // useEffect(() => {
-  //   passDownNewAnswer
-  // }, []);
+  useEffect(() => {
+    passDownNewAnswer();
+  }, []);
 
   useEffect(() => {
     answer = hangman.answer
