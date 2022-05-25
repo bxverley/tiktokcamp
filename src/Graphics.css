@@ -1,0 +1,86 @@
+.hangman-graphics {
+  margin: auto;
+  max-width: 60rem;
+  padding: 2rem;
+  /* add the url of the img files below for the animation */
+}
+
+#frame_1 {
+  visibility: hidden;
+  animation: 1s show infinite;
+}
+
+#frame_2 {
+  visibility: hidden;
+  animation: 1s show infinite;
+  animation-delay: 0.125s;
+}
+
+#frame_3 {
+  visibility: hidden;
+  animation: 1s show infinite;
+  animation-delay: 0.25s;
+}
+
+#frame_4 {
+  visibility: hidden;
+  animation: 1s show infinite;
+  animation-delay: 0.375s;
+}
+
+#frame_5 {
+  visibility: hidden;
+  animation: 1s show infinite;
+  animation-delay: 0.5s;
+}
+
+#frame_6 {
+  visibility: hidden;
+  animation: 1s show infinite;
+  animation-delay: 0.625s;
+}
+
+#frame_7 {
+  visibility: hidden;
+  animation: 1s show infinite;
+  animation-delay: 0.75s;
+}
+
+#frame_8 {
+  visibility: hidden;
+  animation: 1s show infinite;
+  animation-delay: 0.865s;
+}
+
+#frame_9 {
+  visibility: hidden;
+  animation: 1s show infinite;
+  animation-delay: 0.99s;
+}
+
+#frame_10 {
+  visibility: hidden;
+  animation: 1s show infinite;
+  animation-delay: 1.115s;
+}
+
+#frame_11 {
+  visibility: hidden;
+  animation: 1s show infinite;
+  animation-delay: 1.24s;
+}
+
+@keyframes show {
+  0% {
+    visibility: visible;
+  }
+  12.5% {
+    visibility: visible;
+  }
+  12.6% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: hidden;
+  }
+}

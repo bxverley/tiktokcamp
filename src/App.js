@@ -1,4 +1,5 @@
 import './App.css';
+import Title from './components/Title';
 import Graphics from './components/Graphics';
 import WordBlanks from './components/WordBlanks';
 import WrongWords from './components/WrongWords';
@@ -52,6 +53,7 @@ function App() {
 
   return (
     <div className="App">
+      <Title/>
       <Graphics/>
       <WordBlanks/>
       <WrongWords/>
