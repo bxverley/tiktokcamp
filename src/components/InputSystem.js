@@ -4,7 +4,9 @@ import { KeyboardEvent } from "react"
 import React, { useState, useEffect, } from 'react';
 import { useSelector, useDispatch } from "react-redux";
 import { addCorrectGuess, addGuessedWord, addWrongWord } from "../hangmanSlice";
+import {} from './WordBlanks'
 
+export let guessedWords;
 
 export default function InputSystem(props) {
     //put any custom functions here
