@@ -3,7 +3,7 @@
 import { KeyboardEvent } from "react"
 import React, { useState, useEffect, } from 'react';
 import { useSelector, useDispatch } from "react-redux";
-import { addGuessedWord, addWrongWord } from "../hangmanSlice";
+import { addCorrectGuess, addGuessedWord, addWrongWord } from "../hangmanSlice";
 
 
 export default function InputSystem(props) {
@@ -36,8 +36,11 @@ export default function InputSystem(props) {
           dispatch(addGuessedWord(letter))
           //update store for wrong word
           if (!hangman.answer.includes(letter)) {
-            console.log("Added wrong word: " + letter + " to redux");
+            console.log("Added wrong letter: " + letter + " to redux");
             dispatch(addWrongWord(letter))
+          } else {
+            console.log("Added correct letter: " + letter + " to redux");
+            dispatch(addCorrectGuess(letter))
           }
           setLetter(null);
         }
@@ -67,6 +70,7 @@ export default function InputSystem(props) {
             <h2>for testing:</h2>
             <h2>guessed: {hangman.guessedWords}</h2>
             <h2>wrong: {hangman.wrongWords}</h2>
+            <h2>wins: {hangman.winCounter}</h2>
             <h2></h2>
           </div>
           <div>

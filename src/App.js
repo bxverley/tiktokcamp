@@ -9,11 +9,9 @@ import { wordBankTemp } from './tempWords';
 import { useEffect } from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import { store } from './store';
-import { setAnswer } from './hangmanSlice';
+import { clearAllGuesses, incrementWinCounter, setAnswer } from './hangmanSlice';
 
 function App() {
-
-  var answer = "";
 
   //Redux stuff
   const hangman = useSelector(state => state.hangman);
@@ -21,7 +19,8 @@ function App() {
   
 
   function randomWord() {
-    answer = wordBankTemp[Math.floor(Math.random() * wordBankTemp.length)];
+    var answer = wordBankTemp[Math.floor(Math.random() * wordBankTemp.length)];
+    return answer
     //alert(answer);
   }
 
@@ -33,11 +32,26 @@ function App() {
   // }
 
   function passDownNewAnswer() {
-    randomWord();
+    var answer = randomWord();
     console.log("Loaded random word: " + answer);
-    answer = answer.toLowerCase()
-    dispatch(setAnswer(answer))
-    answer = hangman.answer
+    answer = answer.toLowerCase();
+    dispatch(setAnswer(answer));
+    answer = hangman.answer;
+  }
+
+  function checkIfWon() {
+    var answer = hangman.answer.split("");
+    // remove duplicate words
+    var uniqueAnswer = [...new Set(answer)];
+    var correctGuesses = hangman.correctGuesses;
+    var a = uniqueAnswer;
+    var b = correctGuesses;
+    if ( a.every(item => b.includes(item)) && b.every(item => a.includes(item)) ) {
+      return true
+    } else {
+      return false
+    }
+
   }
   // passDownNewAnswer();
 
@@ -45,9 +59,16 @@ function App() {
     passDownNewAnswer();
   }, []);
 
+
   useEffect(() => {
-    answer = hangman.answer
-    console.log("App: " + answer + " is the answer.")
+    var answer = hangman.answer;
+    console.log("App: " + answer + " is the answer.");
+    var win = checkIfWon();
+    if (win) {
+      passDownNewAnswer();
+      dispatch(incrementWinCounter());
+      dispatch(clearAllGuesses());
+    }
   });
 
 
