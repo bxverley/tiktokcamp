@@ -29,3 +29,14 @@ code {
   margin: 10px;
   background-color: white;
 }
+
+.wrongWordsClass {
+  color : black;
+}
+
+#wrongWords {
+  color: red;
+  font-weight: bold;
+  font-size: large;
+  text-align: center;
+}

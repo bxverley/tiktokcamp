@@ -16,21 +16,21 @@ export default function WrongWords() {
 
     
 
-    const updateWrongLetter = letter => {
-        if (word.includes(letter) === false) {
-            wrongLetters.push(letter);
-        }
-        return wrongLetters
-    }
+    // const updateWrongLetter = letter => {
+    //     if (word.includes(letter) === false) {
+    //         wrongLetters.push(letter);
+    //     }
+    //     return wrongLetters
+    // }
 
 
     class StrikeThrough extends React.Component {
         render() {
             return (
-                <div>
+                <div className="text-white font-bold mb-5">
                     <h2 style={{textDecorationLine: 'line-through', textDecorationStyle: 'solid'}}>
                     <link rel='stylesheet' href='WrongWords.css'></link>
-                    {wrongLetters}
+                    {/* {wrongLetters} */}
                     <h2>
                         {/* this is redux */}
                         {hangman.wrongWords.map(word => (
