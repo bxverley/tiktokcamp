@@ -7,8 +7,8 @@ import { useSelector, useDispatch } from 'react-redux';
 
 export default function WrongWords() {
     //put any custom functions here
-    let word = ['A', 'P', 'P', 'L', 'E'];
-    let wrongLetters = ['O','R','D']
+    //let word = ['A', 'P', 'P', 'L', 'E'];
+    //let wrongLetters = ['O','R','D']
 
     //Redux Stuff
     const hangman = useSelector(state => state.hangman);
@@ -29,6 +29,7 @@ export default function WrongWords() {
             return (
                 <div>
                     <h2 style={{textDecorationLine: 'line-through', textDecorationStyle: 'solid'}}>
+                    <link rel='stylesheet' href='WrongWords.css'></link>
                     {wrongLetters}
                     <h2>
                         {/* this is redux */}
