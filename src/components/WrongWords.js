@@ -7,8 +7,8 @@ import { useSelector, useDispatch } from 'react-redux';
 
 export default function WrongWords() {
     //put any custom functions here
-    let word = ['A', 'P', 'P', 'L', 'E'];
-    let wrongLetters = ['O','R','D']
+    //let word = ['A', 'P', 'P', 'L', 'E'];
+    //let wrongLetters = ['O','R','D']
 
     //Redux Stuff
     const hangman = useSelector(state => state.hangman);
