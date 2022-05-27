@@ -1,5 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 .App {
   text-align: center;
+  background-color: #e2cfc9;
 }
 
 .App-logo {
@@ -12,6 +16,7 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+// below the change in the layout is based on breakpoints -> responsive web layout
 
 .App-header {
   background-color: #282c34;
@@ -35,4 +40,9 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.Title {
+  width: 100%;
+  background-color: #82ac85;
 }

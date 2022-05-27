@@ -1,32 +1,35 @@
+//import stuff you need here
+//Tasking No. 3
 import React from 'react';
 import ReactDOM from 'react-dom';
 
 
-let word = ['A', 'P', 'P', 'L', 'E'];
+export default function WrongWords() {
+    //put any custom functions here
 
-let wrongLetters = []
-
-const updateWrongLetter = letter => {
-    if (word.includes(letter) === False) {
-        wrongLetters.push(letter);
+    const updateWrongLetter = letter => {
+        if (word.includes(letter) === false) {
+            wrongLetters.push(letter);
+        }
+        return wrongLetters
     }
-    return wrongLetters
-}
 
 
-class StrikeThrough extends React.Component {
-    render() {
-        return (
-            <div>
-                <Text style={{textDecorationLine: 'line-through', textDecorationStyle: 'solid'}}>
-                {wrongLetters}
-                </Text>
-            </div>
-        )
+    class StrikeThrough extends React.Component {
+        render() {
+            return (
+                <div>
+                    <h2 style={{textDecorationLine: 'line-through', textDecorationStyle: 'solid'}}>
+                    {wrongLetters}
+                    </h2>
+                </div>
+            )
+        }
     }
+  
+    return (
+      <div>
+        <StrikeThrough />
+      </div>
+    )
 }
-
-ReactDOM.render(
-    <StrikeThrough />,
-    document.getElementById('WrongWord')
-)

@@ -1,9 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    wrongWords: ["A", "B"],
-    guessedWords: ["A"],
+    wrongWords: [],
+    guessedWords: [],
     win: false,
+    answer: "",
 }
 
 export const hangmanSlice = createSlice ({
@@ -16,9 +17,15 @@ export const hangmanSlice = createSlice ({
         addWrongWord: (state, action) => {
             state.wrongWords = [...state.wrongWords, action.payload]
         },
+        addGuessedWord: (state, action) => {
+            state.guessedWords = [...state.guessedWords, action.payload]
+        },
+        setAnswer: (state, action) => {
+            state.answer = action.payload
+        },
     },
 })
-
-export const {toggleWin, addWrongWord} = hangmanSlice.actions;
+ 
+export const {toggleWin, addWrongWord, addGuessedWord, setAnswer} = hangmanSlice.actions; //update this everytime you add a reducer
 
 export default hangmanSlice.reducer;
