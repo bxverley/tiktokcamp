@@ -27,9 +27,8 @@ export default function WrongWords() {
     class StrikeThrough extends React.Component {
         render() {
             return (
-                <div className="text-white font-bold mb-5" id='wrongWords'>
+                <div className="text-white font-bold mb-5" id='wrongWords' class="text-sm md:text-md lg:text-lg xl:text-xl 2xl:text-2xl text-maroon-500">
                     <h2 style={{textDecorationLine: 'line-through', textDecorationStyle: 'solid'}}>
-                    <link rel='stylesheet' href='WrongWords.css'></link>
                     {/* {wrongLetters} */}
                     <h2>
                         {/* this is redux */}
