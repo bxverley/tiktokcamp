@@ -1,11 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+
 const initialState = {
     wrongWords: [],
     correctGuesses: [],
     guessedWords: [],
     gameOver: false,
-    answer: "",
+    answer: "TikkyTokky",
     winCounter: 0,
 }
 
