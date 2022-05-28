@@ -78,15 +78,17 @@ export default function InputSystem(props) {
     let buttonStyling = buttonStyling1 + " " + buttonStyling2 + " " + buttonStyling3 + " " + buttonStyling4
     return (
       <div tabIndex="0" onKeyDown={getLetterPressed}>
-          <h2>Answer: {hangman.answer} delete this when done.</h2>
-          <h1>Input: {letter} </h1>
-          <div>
+          {/* <h2>Answer: {hangman.answer} delete this when done.</h2> */}
+          <div className="bg-green-500 text-black font-bold container mx-auto px-1">
+            <h1 className="text-lg md:text-2xl lg:text-4xl">Letter Chosen: {letter} </h1>
+          </div>
+          {/* <div>
             <h2>for testing:</h2>
             <h2>guessed: {hangman.guessedWords}</h2>
             <h2>wrong: {hangman.wrongWords}</h2>
             <h2>wins: {hangman.winCounter}</h2>
             <h2></h2>
-          </div>
+          </div> */}
           <div>
             <div>
             { row1.map((l,index)=>{
