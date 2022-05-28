@@ -34,7 +34,7 @@ export default function WrongWords() {
                     <h2>
                         {/* this is redux */}
                         {hangman.wrongWords.map(word => (
-                            <div key={word}>{word}</div>
+                            <div className='inline p-4' key={word}>{word}</div>
                         ))}
                     </h2>
                     </h2>
