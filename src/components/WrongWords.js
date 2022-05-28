@@ -28,7 +28,7 @@ export default function WrongWords() {
     class StrikeThrough extends React.Component {
         render() {
             return (
-                <div className="text-sm md:text-md lg:text-lg xl:text-xl 2xl:text-2xl text-amber-900">
+                <div className="text-sm md:text-md lg:text-lg xl:text-xl 2xl:text-2xl text-pink-900 border-2 border-indigo-900">
                     <h2 style={{textDecorationLine: 'line-through', textDecorationStyle: 'solid'}}>
                     {/* {wrongLetters} */}
                     <h2>
