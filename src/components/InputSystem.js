@@ -71,7 +71,7 @@ export default function InputSystem(props) {
 
     
     let buttonStyling1 = "bg-green-500 hover:bg-green-400 text-black font-bold  border-green-700 hover:border-green-500 rounded"
-    let buttonStyling2 = "text-lg py-1 px-2 border-b-2 m-0.5";
+    let buttonStyling2 = "text-lg py-1 px-2 border-b-4 m-0.5";
     let buttonStyling3 = "md:text-2xl md:py-2 md:px-6 md:border-b-6 md:m-0.5";
     let buttonStyling4 = "lg:text-6xl lg:py-4 lg:px-8 lg:border-b-8 lg:m-1"
 
@@ -107,7 +107,7 @@ export default function InputSystem(props) {
             })}
             </div>
             <div>
-              <button onClick={() => checkAndSendLetter() }>Enter</button>
+              <button onClick={() => checkAndSendLetter() } className="bg-green-500 hover:bg-green-400 text-white font-bold py-2 px-4 border-b-4 border-green-700 hover:border-green-500 lg:text-6xl lg:py-4 lg:px-8 lg:border-b-8 lg:m-1 rounded" >Enter</button>
             </div>
           </div>
       </div>
