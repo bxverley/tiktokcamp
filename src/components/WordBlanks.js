@@ -3,23 +3,35 @@
 import React, { Component } from 'react';
 import _default from 'react-redux/es/components/connect';
 import { wordBankTemp } from '../tempWords';
-import { guessedWords } from './InputSystem';
-import { checkIfWon } from '../App.js'
+import {useSelector, useDispatch} from 'react-redux';
+import { useEffect } from 'react';
+import { useState } from 'react';
 
 export default function WordBlanks() {
   var words = wordBankTemp; //demo wordbank
 
-  let answer = "";
-  let wordStatus = null;
-  let guessed = [];
-  function randomWord() {
-    answer = words[Math.floor(Math.random() * words.length)];
-    //alert(answer);
-  }
+  //Redux stuff
+  const hangman = useSelector(state => state.hangman);
+
+  const [wordStatus, setWordStatus] = useState(null);
+
+  useEffect(() => {
+    guessedWord();
+
+  });
+
+  // function randomWord() {
+  //   answer = words[Math.floor(Math.random() * words.length)];
+  //   //alert(answer);
+  // }
 
   function guessedWord() {
-    wordStatus = answer.split('').map(letter => (guessed.indexOf(letter) >= 0 ? letter : " _ ")).join('');
+    var answer = hangman.answer;
+    var guessed = hangman.guessedWords;
+    let newWordStatus = answer.split('').map(letter => (guessed.indexOf(letter) >= 0 ? letter : " _ ")).join('');
+    setWordStatus(newWordStatus);
     // document.getElementById('blanks').innerHTML = wordStatus //
+    console.log("chicky chicky")
   }
 
   // function handleGuess(guessedWords) {
@@ -37,8 +49,8 @@ export default function WordBlanks() {
   // }
 
 
-  randomWord();
-  guessedWord();
+  // randomWord();
+  // guessedWord();
   //handleGuess(guessedWords);
   
 
