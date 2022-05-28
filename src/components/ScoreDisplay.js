@@ -10,7 +10,7 @@ export default function ScoreDisplay() {
   
     return (
       <div>
-          <h1>Current Score: {hangman.winCounter} </h1>
+          <h1 className="text-lg md:text-2xl lg:text-4xl">Current Score: {hangman.winCounter} </h1>
       </div>
     )
 }

@@ -81,7 +81,7 @@ export default function InputSystem(props) {
     return (
       <div tabIndex="0" onKeyDown={getLetterPressed}>
           {/* <h2>Answer: {hangman.answer} delete this when done.</h2> */}
-          <div className="bg-green-500 text-black font-bold container mx-auto px-1">
+          <div className=" text-black font-bold mx-auto px-1 flex-auto">
             <h1 className="text-lg md:text-2xl lg:text-4xl">Letter Chosen: {letter} </h1>
           </div>
           {/* <div>
