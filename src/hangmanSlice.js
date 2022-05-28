@@ -5,7 +5,7 @@ const initialState = {
     correctGuesses: [],
     guessedWords: [],
     gameOver: false,
-    answer: "",
+    answer: "TikkyTokky",
     winCounter: 0,
 }
 

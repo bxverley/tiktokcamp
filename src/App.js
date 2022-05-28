@@ -9,7 +9,7 @@ import { wordBankTemp } from './tempWords';
 import { useEffect } from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import { store } from './store';
-import { clearAllGuesses, incrementWinCounter, setAnswer } from './hangmanSlice';
+import { clearAllGuesses, incrementWinCounter, setAnswer, toggleGameOver } from './hangmanSlice';
 
 function App() {
 
@@ -30,6 +30,10 @@ function App() {
   //     payload: { answer },
   //   }
   // }
+
+  useEffect(() => {
+    passDownNewAnswer();
+  }, []);
 
   function passDownNewAnswer() {
     var answer = randomWord();
@@ -55,9 +59,14 @@ function App() {
   }
   // passDownNewAnswer();
 
-  useEffect(() => {
-    passDownNewAnswer();
-  }, []);
+  function checkIfLose() {
+    if (hangman.wrongWords.length >= 6) {
+      dispatch(toggleGameOver());
+    }
+    return hangman.gameOver
+  }
+
+  
 
 
   useEffect(() => {
@@ -66,8 +75,13 @@ function App() {
     var win = checkIfWon();
     if (win) {
       passDownNewAnswer();
-      dispatch(incrementWinCounter());
       dispatch(clearAllGuesses());
+      dispatch(incrementWinCounter());
+    }
+    var lose = checkIfLose();
+    if (lose) {
+      var score = hangman.winCounter
+      alert("Game Over. Your final score: " + score)
     }
   });
 
