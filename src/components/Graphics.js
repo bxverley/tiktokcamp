@@ -8,9 +8,13 @@ var link = document.createElement('link');
 export default function Graphics() {
     //put any custom functions here
     return (
-      <><head>
+      <div>
+
+      {/* <head>
         <link rel="stylesheet" type="text/css" href="/Graphics.css" />
-      </head><body>
+      </head> */}
+      
+      <body>
           <div className="container mx-auto bg-gray-200 rounded-xl shadow border p-8 m-10" position="relative">
             <svg width="100%" height="100%" viewBox="0 0 1439 675" margin="auto" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g id="graphic 1">
@@ -47,7 +51,9 @@ export default function Graphics() {
               </g>
             </svg>
           </div>
-        </body></>
+        </body>
+
+        </div>
         
     );
 }

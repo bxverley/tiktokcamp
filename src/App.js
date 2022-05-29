@@ -1,4 +1,5 @@
 import './App.css';
+import '../src/components/Graphics.css'
 import Title from './components/Title';
 import Graphics from './components/Graphics';
 import WordBlanks from './components/WordBlanks';
