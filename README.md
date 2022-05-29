@@ -3,7 +3,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 A Hangman Game made for the 2022 Tiktok Youthcamp 2022
-Contributors:
+Contributors:  
 @bxverley  
 @chris-lye   
 @Anteloped  
