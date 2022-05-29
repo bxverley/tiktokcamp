@@ -8,7 +8,6 @@ export default function Title(){
             </p>
             <p className="text-white text-lg">
                 By Group 2<br></br>
-                Christopher Lye, Beverley Chee, Andrea Cheah, Vannara Lim and Ernest Lim
             </p>
         </div><div className="container mx-auto bg-gray-200 rounded-xl shadow border p-8 m-10">
             <p className= "text-3xl text-gray-700 font-bold mb-5">
