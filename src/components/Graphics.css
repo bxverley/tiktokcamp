@@ -1,68 +1,97 @@
-@keyframes walk-right-arm{
-  0% {transform: rotate(30deg);
-  left: 22px;}
+#right-arm {
+  animation: walk-right-arm 2s infinite, move 10s forwards;
+}
+#left-arm {
+  transform: rotate(-20deg);
+  animation: walk-left-arm 2s infinite, move 10s forwards;
+}
+#right-leg {
+  transform: rotate(-20deg);
+  animation: walk-right-leg 2s infinite, move 10s forwards;
+}
+#left-leg {
+  transform: rotate(20deg);
+  animation: walk-left-leg 2s infinite, move 10s forwards;
+}
+#head {
+  animation: head 2s infinite, move 10s steps(18) infinite;
+  /* transform: translateX(-50px); */
+  /* transition-duration: 8s; */
+}
+@keyframes move {
+  from {
+    left: 0;
+  }
+  to {
+    left: -100px;
+  }
+}
+@keyframes head {
+  0% {
+    top: 0px;
+    transform: rotate(0deg);
+  }
   50% {
-    transform: rotate(-30deg);
+    top: 5px;
+    transform: rotate(0.3deg);
+  }
+}
+@keyframes walk-right-arm {
+  0% {
+    transform: rotate(0.3deg);
+    left: 22px;
+  }
+  50% {
+    transform: rotate(-0.3deg);
     left: -22px;
   }
-  100%{
-    transform: rotate(30deg);
+  100% {
+    transform: rotate(0.3deg);
     left: 22px;
   }
 }
 
-@keyframes walk-left-arm{
-  0% {transform: rotate(-30deg);
-  right: 22px;}
-  50% {
-    transform: rotate(30deg);
-    right: -22px;
+@keyframes walk-left-arm {
+  0% {
+    transform: rotate(-0.3deg);
+    right: 5px;
   }
-  100%{
-    transform: rotate(-30deg);
-    right: 22px;
+  50% {
+    transform: rotate(0.3deg);
+    right: -5px;
+  }
+  100% {
+    transform: rotate(-0.3deg);
+    right: 5px;
   }
 }
 
-@keyframes walk-right-leg{
-  0% {transform: rotate(-30deg);
-  left: 30px;}
-  50% {
-    transform: rotate(30deg);
-    left: -30px;
+@keyframes walk-right-leg {
+  0% {
+    transform: rotate(-0.3deg);
+    left: 5px;
   }
-  100%{
-    transform: rotate(-30deg);
-    left: 30px;
+  50% {
+    transform: rotate(0.3deg);
+    left: -5px;
+  }
+  100% {
+    transform: rotate(-0.3deg);
+    left: 5px;
   }
 }
 
-@keyframes walk-left-leg{
-  0% {transform: rotate(30deg);
-  right: 30px;}
-  50% {
-    transform: rotate(-30deg);
-    right: -30px;
-  }
-  100%{
-    transform: rotate(30deg);
+@keyframes walk-left-leg {
+  0% {
+    transform: rotate(0.3deg);
     right: 30px;
   }
-}
-
-#right-arm {
-  transform: rotate(30deg);
-  animation: walk-right-arm 2s infinite;
-}
-#left-arm{
-  transform: rotate(-30deg);
-  animation: walk-left-arm 2s infinite ;
-}
-#right-leg {
-  transform: rotate(-30deg);
-  animation: walk-right-leg 2s infinite;
-}
-#left-leg {
-  transform: rotate(30deg);
-  animation: walk-left-leg 2s infinite;
+  50% {
+    transform: rotate(-0.3deg);
+    right: -30px;
+  }
+  100% {
+    transform: rotate(0.3deg);
+    right: 30px;
+  }
 }
